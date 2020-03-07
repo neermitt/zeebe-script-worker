@@ -17,9 +17,11 @@
 
 	<properties>
 		<version.zeebe>0.22.1</version.zeebe>
+        <version.zeebe.spring>0.22.0</version.zeebe.spring>
+        <version.spring.boot>2.2.5.RELEASE</version.spring.boot>
 		<version.groovy>2.4.19</version.groovy>
 		<version.feel>1.10.1</version.feel>
-		<version.java>8</version.java>
+        <version.java>11</version.java>
 		<java.version>${version.java}</java.version>
 
 		<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -35,23 +37,55 @@
 	</properties>
 
 	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>io.zeebe</groupId>
-				<artifactId>zeebe-bom</artifactId>
-				<version>${version.zeebe}</version>
-				<scope>import</scope>
-				<type>pom</type>
-			</dependency>
-		</dependencies>
+        <dependencies>
+            <dependency>
+                <groupId>io.zeebe</groupId>
+                <artifactId>zeebe-bom</artifactId>
+                <version>${version.zeebe}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${version.spring.boot}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
 	</dependencyManagement>
 
 	<dependencies>
 
-		<dependency>
-			<groupId>io.zeebe</groupId>
-			<artifactId>zeebe-client-java</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>io.zeebe.spring</groupId>
+            <artifactId>spring-zeebe-starter</artifactId>
+            <version>${version.zeebe.spring}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
 		<!-- script languages -->
 		<dependency>
@@ -94,11 +128,11 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>io.zeebe</groupId>
-			<artifactId>zeebe-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>io.zeebe</groupId>
+            <artifactId>zeebe-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
 	</dependencies>
 
