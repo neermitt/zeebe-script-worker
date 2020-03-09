@@ -15,6 +15,8 @@
  */
 package io.zeebe.script;
 
+import org.python.core.Options;
+
 import java.util.HashMap;
 import java.util.Map;
 import javax.script.Bindings;
@@ -30,6 +32,7 @@ public class ScriptEvaluator {
   private final Map<String, ScriptEngine> cachedScriptEngines = new HashMap<>();
 
   public Object evaluate(String language, String script, Map<String, Object> variables) {
+      Options.importSite = false;
 
     final ScriptEngine scriptEngine =
         cachedScriptEngines.computeIfAbsent(language, scriptEngineManager::getEngineByName);

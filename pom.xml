@@ -34,7 +34,8 @@
 		<plugin.version.javadoc>3.1.1</plugin.version.javadoc>
 		<!-- disable jdk8 javadoc checks on release build -->
 		<additionalparam>-Xdoclint:none</additionalparam>
-	</properties>
+        <version.jython>2.7.0</version.jython>
+    </properties>
 
 	<dependencyManagement>
         <dependencies>
@@ -100,7 +101,14 @@
 			<version>${version.feel}</version>
 		</dependency>
 
-		<!-- logging -->
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython</artifactId>
+            <version>${version.jython}</version>
+        </dependency>
+
+
+        <!-- logging -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>

@@ -19,6 +19,7 @@ import io.zeebe.client.ZeebeClient;
 import io.zeebe.client.api.response.ActivatedJob;
 import io.zeebe.client.api.worker.JobClient;
 import io.zeebe.client.api.worker.JobHandler;
+import org.python.core.Options;
 
 import java.util.Collections;
 import java.util.Map;
