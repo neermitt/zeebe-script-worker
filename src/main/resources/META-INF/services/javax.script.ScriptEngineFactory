@@ -1,0 +1,4 @@
+org.python.jsr223.PyScriptEngineFactory
+org.camunda.feel.script.FeelScriptEngineFactory
+org.camunda.feel.script.FeelUnaryTestsScriptEngineFactory
+org.codehaus.groovy.jsr223.GroovyScriptEngineFactory

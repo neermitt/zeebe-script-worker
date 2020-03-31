@@ -1,8 +1,9 @@
 FROM maven:3-jdk-14 AS build
 
-COPY src /usr/src/app/src
-COPY pom.xml /usr/src/app
+COPY pom.xml /usr/src/app/pom.xml
+RUN mvn -f /usr/src/app/pom.xml dependency:go-offline
 
+COPY src /usr/src/app/src
 RUN mvn -f /usr/src/app/pom.xml clean package
 
 
