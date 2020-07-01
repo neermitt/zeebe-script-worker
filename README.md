@@ -32,6 +32,7 @@ Available script languages:
 * [groovy](http://groovy-lang.org/)
 * [feel](https://github.com/camunda/feel-scala)
 * [mustache](http://mustache.github.io/mustache.5.html)
+* [python 2 - jython](https://www.jython.org/)
 
 ## Install
 

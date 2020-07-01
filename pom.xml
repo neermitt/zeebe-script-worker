@@ -21,6 +21,7 @@
 
         <version.groovy>2.4.19</version.groovy>
         <version.feel>1.11.2</version.feel>
+        <version.jython>2.7.0</version.jython>
 
         <version.spring.boot>2.3.1.RELEASE</version.spring.boot>
         <version.java>11</version.java>
@@ -109,6 +110,12 @@
             <groupId>org.camunda.feel</groupId>
             <artifactId>feel-engine</artifactId>
             <version>${version.feel}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython-standalone</artifactId>
+            <version>${version.jython}</version>
         </dependency>
 
         <!-- test -->
